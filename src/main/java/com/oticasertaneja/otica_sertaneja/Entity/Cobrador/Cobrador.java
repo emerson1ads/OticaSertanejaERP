@@ -1,4 +1,4 @@
-package com.oticasertaneja.otica_sertaneja.Entity;
+package com.oticasertaneja.otica_sertaneja.Entity.Cobrador;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

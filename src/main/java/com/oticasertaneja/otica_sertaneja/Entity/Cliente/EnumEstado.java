@@ -1,4 +1,4 @@
-package com.oticasertaneja.otica_sertaneja.Entity;
+package com.oticasertaneja.otica_sertaneja.Entity.Cliente;
 
 public enum EnumEstado {
     AC,

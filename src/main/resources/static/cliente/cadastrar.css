@@ -1,0 +1,232 @@
+* {
+    margin: 10px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #e6e6e6;
+    justify-content: center;
+}
+
+.container.large {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+header{
+    text-align: center;
+   
+}
+
+.container.small{
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+header.large .logo{
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+header.small .logo {
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+header.large h1 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+header.small h1 {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+form {
+    margin-top: 20px;
+    background-color: #f2f2f2;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+}
+
+.legend {
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+
+}
+
+.input-group{
+   display: flex;
+   flex-direction: column;
+   gap: 0px;
+   background-color: #ffffff;
+   
+}
+
+.input-group select{
+    background-color: #ffffff;
+}
+
+#cpf{
+    width: 120px;
+}
+
+#nome{
+    width: 250px;
+}
+
+#dataNascimento{
+    width: 130px;
+}
+
+#contatoWhatsapp{
+    width: 140px;
+}
+
+#cep{
+    width: 100px;
+}
+
+#cidade{
+    width: 120px;
+}
+#bairro{
+    width: 120px;
+}
+
+#uf{
+    width: 100px;
+}
+
+#numeroCasa{
+    width: 90px;
+}
+
+#validadeOculos{
+    width: 130px;
+}
+
+#vencimentoParcelas{
+    width: 160px;
+}
+
+#qtdParcelas{
+    width: 160px;
+}
+
+#parcelasPagas{
+    width: 110px;
+}
+
+.input-group label {
+    font-size: 14px;
+    margin-bottom: -8px;
+    background-color: #ffffff;
+}
+
+.input-group input{
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.input-group select {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.button-group {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #ffffff;
+
+}
+
+.cancel-btn{
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.submit-btn {
+    background-color: #4CAF50;  
+    color: white;
+    padding: 10px 20px;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer  
+}
+
+/* Foco: muda a borda para azul */
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #007BFF; /* Azul */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Preenchido: muda a borda para verde */
+.input-group input.filled,
+.input-group select.filled {
+    border-color: #28a745; /* Verde */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+
+/* Placeholder styling (opcional) */
+.input-group input::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.input-group input:hover,
+.input-group select:hover {
+    border-color: #007BFF; 
+}
+
+.cancel-btn:hover,
+.submit-btn:hover {
+    opacity: 0.9
+}

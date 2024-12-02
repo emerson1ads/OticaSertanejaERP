@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../static/cliente/cliente.css">
+
+    <title>Adicionar Cliente</title>
+</head>
+<body>
+    <!-- GUIA DE PÁGINA -->
+    <div id="cabecalho">
+        <p>Cadastro &gt;</p>
+        <h1>Novo Cliente</h1>
+    </div>
+    <!---------------------------------->
+    <!---         PÁGINA             --->
+    <!---------------------------------->
+    <div class="cad-clientes">
+        <!-- CADASTRAR CLIENTE -->
+         <div id="cadastrar">
+            <div id="novo-cliente">
+                <form th:action="@{/cliente/adicionar}" method="post" th:object="${cliente}">
+                    <fieldset id="dados-pessoais">
+                        <legend>Dados Pessoais:</legend>
+                        <div>
+                            <label for="nome"> Nome do Cliente</label>
+                            <input type="text" placeholder="Nome Completo" name="nome">
+                        </div>
+                        <div>
+                            <label for="cpf">CPF</label>
+                            <input type="text" placeholder="000.000.000-00" name="cpf">
+                        </div>
+                        <div>
+                            <label for="tipoOculos">Tipo do Óculos</label>
+                            <input type="text" placeholder="Óculos de Grau" name="tipoOculos">
+                        </div>
+                        <div>
+                            <label for="dataValidade">Data de Validade</label>
+                            <input type="date" name="dataValidade">
+                        </div>
+                        <div>
+                            <label for="quantidadeParcelas">Quantidade de Parcelas</label>
+                            <input type="number" name="quantidadeParcelas" min="1" max="999" placeholder="1234">
+                        </div>
+                        <div>
+                            <label for="parcelasPagas">Parcelas Pagas</label>
+                            <input type="number" placeholder="1234" min="1" max="999" name="parcelasPagas">
+                        </div>
+                        <div>
+                            <label for="contatoWhatsapp">Whatsapp</label>
+                            <input type="tel" placeholder="(00) 00000-0000" name="contatoWhatsapp">
+                        </div>
+                        <div>
+                            <label for="dataNascimento"> Data de Nascimento</label>
+                            <input type="date" name="dataNascimento">
+                        </div>
+                        <div>
+                            <label for="afiliado">Programa de afiliado</label>
+                            <input type="radio" value="false" name="afiliado" checked>
+                            <label>Não Afiliado</label>
+                            <input type="radio" value="true" name="afiliado">
+                            <label>Afiliado</label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Endereço</legend>
+                        <div>
+                            <label for="cep">CEP</label>
+                            <input type="text" placeholder="0000-0000" name="cep">
+                        </div>
+                        <div>
+                            <label for="rua">rua</label>
+                            <input type="text" placeholder="Av. Afonso Pena" name="rua">
+                        </div>
+                        <div>
+                            <label for="numeroCasa"> Numero da Casa</label>
+                            <input type="number" placeholder="1234" name="numeroCasa">
+                        </div>
+                        <div>
+                            <label for="bairro">Bairro</label>
+                            <input type="text" placeholder="Carneiro" name="bairro">
+                        </div>
+                        <div>
+                            <label for="cidade">Cidade</label>
+                            <input type="text" placeholder="Ouricuri" name="cidade">
+                        </div>
+                        <div>
+                            <label for="uf">UF(Estado)</label>
+                            <select name="uf" >
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espirito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div>
+                            <label for="tempoRelacionamento"> Tempo de Relacionamento</label>
+                            <input type="date" name="tempoRelacionamento">
+                        </div>
+                        <div>
+                            <label for="situacao">Situação</label>
+                            <input type="radio" value="ADIMPLENTE" name="situacao" checked>
+                            <label>ADIMPLENTE</label>
+                            <input type="radio" value="INADIMPLENTE" name="situacao">
+                            <label>INADIMPLENTE</label>
+                        </div>
+                    </fieldset>
+                    <div id="btns_final">
+                        <button type="submit" id="btn-salvar">Salvar</button>
+                        <button id="btn_cancel"><a href="#">Cancelar</a></button>
+                    </div>
+                </form>
+            </div>      
+        </div>
+    </div>
+</body>
+</html>

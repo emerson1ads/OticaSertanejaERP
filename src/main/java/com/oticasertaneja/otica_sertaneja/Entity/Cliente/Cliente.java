@@ -1,4 +1,4 @@
-package com.oticasertaneja.otica_sertaneja.Entity;
+package com.oticasertaneja.otica_sertaneja.Entity.Cliente;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -7,10 +7,14 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+import com.oticasertaneja.otica_sertaneja.Entity.Grupo;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -26,12 +30,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class Cliente extends AbstractPersistable<Long>{
-    
+
+    //Dado Pessoal
     @NotNull(message = "O nome não pode ser nulo")
     @Size(max = 50, message = "O Nome deve ter no maximo 50 Caracteres")
     @Column(name = "nome", nullable = false)
     private String nome;
 
+    //Dado Pessoal
     @NotNull(message = "O CPF não pode ser nulo")
     @Size(min = 11, max = 11, message =  "O CPF deve ter exatamente 11 digitos")
     @Pattern(regexp ="\\d{11}", message = "O CPF deve conter apenas números")
@@ -42,21 +48,26 @@ public class Cliente extends AbstractPersistable<Long>{
     @Column(name = "tipo_oculos", nullable = false)
     private String tipoOculos;
 
-    @Column(name = "data_validade")
-    private LocalDate dataValidade;
+    @Column(name = "data_validade_oculos")
+    private LocalDate dataValidadeOculos;
+
+    @Column(name = "data_vencimento_parcela")
+    private LocalDate dataVencimentoParcela;
 
     @Min(value = 0, message = "A quantidade de parcelas não pode ser negativa")
     @Column(name = "quantidade_parcelas")
-    private int quantidadeParcelas = 0;
+    private Integer quantidadeParcelas = 0;
 
     @Min(value = 0, message = "O número de parcelas pagas não pode ser negativo")
     @Column(name = "parcelas_pagas")
-    private int parcelasPagas = 0;
+    private Integer parcelasPagas = 0;
 
+    //Dado Pessoal
     @Pattern(regexp = "\\d{11}", message = "O contato deve ter 11 digitos incluindo DDD")
     @Column(name = "contato_whatsapp")
     private String contatoWhatsapp;
 
+    //Dado Pessoal
     @Past(message = "A data de nascimento deve estar no passado")
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
@@ -90,8 +101,11 @@ public class Cliente extends AbstractPersistable<Long>{
     @Enumerated(EnumType.STRING)
     private EnumEstado uf;
 
-    @Column(name = "tempo_relacionamento")
-    private Integer tempoRelacionamento;
+    @Column(name = "cliente_desde")
+    private LocalDate clienteDesde;
+
+    @Column(name = "inicio_parcelamento")
+    private LocalDate inicioParcelamento;
 
 
     @Column(name = "situacao")
@@ -108,4 +122,8 @@ public class Cliente extends AbstractPersistable<Long>{
 
     @Column(name = "ativo")
     private Boolean ativo = true;
+
+    @ManyToOne
+    @JoinColumn(name = "grupo_id")
+    private Grupo grupo;
 }

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/cliente/cadastrar.css">
+    <title>Cadastrar Cliente</title>
+</head>
+<body>
+    <div>
+        <header class="container large">
+            <img src="../../static/cliente/otica sertaneja - Copia.jpg" alt="Ótica Sertaneja" class="logo">
+            <h1>Cadastro De Cliente</h1>
+        </header>
+        <form th:action="@{cliente/cadastrar}" method="post" th:object="${cliente}">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" placeholder="Maria Dos Anjos" id="nome" name="nome" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" placeholder="000.000.000-00" id="cpf" name="cpf" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="dataNascimento">Data de Nascimento</label>
+                        <input value="2000-01-01" type="date" id="dataNascimento" name="dataNascimento" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="contatoWhatsapp">Whatsapp/Telefone</label>
+                        <input type="tel" id="contatoWhatsapp" placeholder="(00) 00000-0000" name="contatoWhatsapp" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Endereço</legend>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="cep">CEP</label>
+                        <input type="text" placeholder="0000-0000" id="cep" name="cep" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="cidade">Cidade</label>
+                        <input type="text" id="cidade" name="cidade" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" name="bairro" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="rua">Rua</label>
+                        <input type="text" id="rua" name="rua" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="numeroCasa">Nº da Casa</label>
+                        <input type="number" id="numeroCasa" name="numeroCasa" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="uf">UF</label>
+                        <select id="uf" name="uf" required>
+                        <option value="">Selecione</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE" selected>PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Detalhes do Cliente/Óculos</legend>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="tipoOculos">Tipo do Óculos</label>
+                        <select id="tipoOculos" name="tipoOculos" required>
+                            <option value="">Selecione</option>
+                            <option value="grau" selected>Grau</option>
+                            <option value="sol">Sol</option>
+                            <option value="antirreflexo">Antirreflexo</option>
+                            <option value="fotocromatico">Fotocromático</option>
+                            <option value="multifocal">Multifocal</option>
+                            <option value="bifocal">Bifocal</option>
+                            <option value="progressivo">Progressivo</option>
+                            <option value="esportivo">Esportivo</option>
+                            <option value="protecao">De Proteção</option>
+                            <option value="3d">3D</option>
+                            <option value="computador">Computador</option>
+                            <option value="infantil">Infantil</option>
+                            <option value="polarizado">Polarizado</option>
+                            <option value="retro">Estilo Retrô</option>
+                            <option value="contato">Lentes de Contato</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="tipoAmarção">Tipo de Amarção</label>
+                        <select id="tipoArmacao" name="tipoArmacao" required>
+                            <option value="quadrada" selected>Quadrada</option>
+                            <option value="redonda">Redonda</option>
+                            <option value="retangular">Retangular</option>
+                            <option value="aviador">Aviador</option>
+                            <option value="oval">Oval</option>
+                            <option value="cat_eye">Cat Eye</option>
+                            <option value="sem_aro">Sem Aro</option>
+                            <option value="meio_aro">Meio Aro</option>
+                            <option value="aro_completo">Com Aro Completo</option>
+                            <option value="esportiva">Esportiva</option>
+                            <option value="vintage">Vintage</option>
+                            <option value="wayfarer">Wayfarer</option>
+                            <option value="oversized">Oversized</option>
+                            <option value="madeira">Madeira</option>
+                            <option value="titanio">Titânio</option>
+                            <option value="flexivel">Flexível</option>
+                            <option value="dobravel">Dobrável</option>
+                            <option value="plastica">Plástica</option>
+                            <option value="metalica">Metálica</option>
+                            <option value="personalizada">Personalizada</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="validadeOculos"> Validade do Óculos</label>
+                        <input value="2025-01-01" type="date" id="validadeOculos" name="validadeOculos" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="vencimentoParcelas">Vencimento das Parcelas</label>
+                        <input type="date" id="vencimentoParcelas" name="vencimentoParcelas" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="qtdParcelas">Quantidade de Parcelas</label>
+                        <input type="number" id="qtdParcelas" name="qtdParcelas" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="parcelasPagas">Parcelas Pagas</label>
+                        <input type="number" id="parcelasPagas" name="parcelasPagas" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="clienteDesde"> Cliente Desde</label>
+                        <input type="date" id="clienteDesde" name="clienteDesde" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="inicioParcelamento"> Inicio de Parcelamento</label>
+                        <input type="date" id="inicioParcelamento" name="inicioParcelamento" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="afiliado">Afiliado</label>
+                        <select id="afiliado" name="afiliado" required>
+                            <option value="afiliado">Afiliado</option>
+                            <option value="nao_afiliado">Não Afiliado</option>
+                        </select>
+                    </div>                    
+                    <div class="input-group">
+                        <label for="situacaoParcelas">Situação Parcelas</label>
+                        <select id="situacaoParcelas" name="situacaoParcelas" required>
+                            <option value="adimplente">Adimplente</option>
+                            <option value="inadimplente">Inadimplente</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </fieldset>
+            <fieldset>
+            <div class="button-group">
+                <button type="reset" class="cancel-btn">Cancelar</button>
+                <button type="submit" class="submit-btn">Cadastrar</button>
+            </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded',() => {
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll',() => {
+            if(window.scrollY > 20){
+                header.classList.remove('large');
+                header.classList.add('small');
+            } else{
+                header.classList.remove('small');
+                header.classList.add('large');
+            }
+        })
+    } );
+
+    document.querySelectorAll('.input-group input, .input-group select').forEach((element) => {
+    element.addEventListener('input', function () {
+        if (this.value.trim() !== '') {
+            this.classList.add('filled');
+        } else {
+            this.classList.remove('filled');
+        }
+        });
+    });
+</script>
+</html>
